@@ -8,7 +8,7 @@ const SavingGroupSchema = new Schema({
   payment: {
     type: Number,
     required: true,
-    integer: true,
+    integer: String,
   },
   description: {
     type: String,

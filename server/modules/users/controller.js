@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import User from './model';
+import authConfig from '../../config/auth';
 import validateInput from '../../service/validation';
 
 
@@ -64,7 +65,7 @@ export const auth = async (req, res) => {
       if (isMatch && !err) {
         // Create token if the password matched and no error was thrown
         const token = jwt.sign(
-          user.toJSON(), 'Little secret, big responsability...'
+          user.toJSON(), authConfig.jwtSecret
           , {
             expiresIn: '2 days',
           },
