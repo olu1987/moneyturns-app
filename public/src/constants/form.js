@@ -8,7 +8,7 @@ export default {
   SAVING_GROUP_DESCRIPTION_NAME: 'description',
   SAVING_GROUP_DESCRIPTION_TYPE: 'text',
   SAVING_GROUP_PAYMENT_NAME: 'payment',
-  SAVING_GROUP_PAYMENT_TYPE: 'text',
+  SAVING_GROUP_PAYMENT_TYPE: 'number',
   PASSWORD_CONFIRMATION_NAME: 'passwordConfirmation',
   PASSWORD_CONFIRMATION_TITLE: 'Password Confirmation',
   EMAIL_NAME: 'email',
