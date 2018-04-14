@@ -14,7 +14,10 @@ const SavingGroupSchema = new Schema({
     type: String,
     required: true,
   },
-  members: [Schema.Types.ObjectId],
+  members: [{
+    member_id: String,
+    member_title: String,
+  }],
 }, { timestamps: true });
 
 export default mongoose.model('saving-group', SavingGroupSchema);

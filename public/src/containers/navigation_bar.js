@@ -18,6 +18,7 @@ class NavigationBar extends Component {
 
   logout(e) {
     e.preventDefault();
+    this.context.router.push('/login');
     this.props.logout();
   }
 
@@ -52,6 +53,10 @@ class NavigationBar extends Component {
 NavigationBar.propTypes = {
   auth: PropTypes.object.isRequired,
   logout: PropTypes.func.isRequired,
+};
+
+NavigationBar.contextTypes = {
+  router: PropTypes.object.isRequired,
 };
 
 export default connect(
