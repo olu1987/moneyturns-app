@@ -3,7 +3,7 @@ import * as SavingGroupController from './controller';
 
 const routes = new Router();
 
-routes.post('/saving-group', SavingGroupController.createSavingGroup);
+routes.post('/saving-group/create', SavingGroupController.createSavingGroup);
 routes.post('/saving-group/add-member/:group', SavingGroupController.addMember);
 routes.get('/saving-group', SavingGroupController.getAllSavingGroups);
 

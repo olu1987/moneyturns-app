@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import FormInput from '../components/form_input';
+import { createSavingGroup } from '../actions/group';
 import formConstants from '../constants/form';
 
-class LoginForm extends Component {
+class SavingGroupForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,6 +26,7 @@ class LoginForm extends Component {
 
   onSubmit(e) {
     e.preventDefault();
+    this.props.createSavingGroup(this.state);
   }
 
   render() {
@@ -65,4 +68,8 @@ class LoginForm extends Component {
   }
 }
 
-export default connect(null)(LoginForm);
+SavingGroupForm.propTypes = {
+  createSavingGroup: PropTypes.func.isRequired,
+}
+
+export default connect(null, { createSavingGroup })(SavingGroupForm);
