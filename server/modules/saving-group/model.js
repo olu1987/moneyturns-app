@@ -8,13 +8,16 @@ const SavingGroupSchema = new Schema({
   payment: {
     type: Number,
     required: true,
-    integer: String,
+    integer: true,
   },
   description: {
     type: String,
     required: true,
   },
-  members: [Schema.Types.ObjectId],
+  members: [{
+    member_id: String,
+    member_title: String,
+  }],
 }, { timestamps: true });
 
 export default mongoose.model('saving-group', SavingGroupSchema);
