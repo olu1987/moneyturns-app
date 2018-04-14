@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class Dashboard extends Component {
             <div className="card-body">
               <h5 className="card-title">Hey! Looks like you don&#39;t have a saving group yet</h5>
               <p className="card-text">Click below to start and make yourself a group</p>
-              <a href="#" className="btn btn-primary">Create Saving Group</a>
+              <Link to="/create-saving-group" className="btn btn-primary">Create Saving Group</Link>
             </div>
           </div>
         </div>
