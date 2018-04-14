@@ -26,6 +26,10 @@ nav.navbar {
     width: 100%;
 }
 
+nav > .navbar-brand {
+    margin-right: auto;
+}
+
 .container-fluid{
     padding-top: 50px;
 }

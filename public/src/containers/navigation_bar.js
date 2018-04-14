@@ -1,20 +1,59 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { logout } from '../actions/auth';
 
-export default () => {
-  return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+function mapStateToProps(state) {
+  return {
+    auth: state.auth,
+  };
+}
+
+class NavigationBar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  logout(e) {
+    e.preventDefault();
+    this.props.logout();
+  }
+
+  render() {
+    const { isAuthenticated } = this.props.auth;
+
+    const userLinks = (
+      <ul className="list-inline mb-0">
+        <li className="list-inline-item"><Link className="nav-item nav-link" to="/dashboard">Dashboard</Link></li>
+        <li className="list-inline-item"><a onClick={this.logout.bind(this)} className="nav-item nav-link" href="#">Logout</a></li>
+      </ul>
+    );
+
+    const guestLinks = (
+      <ul className="list-inline mb-0">
+        <li className="list-inline-item"><Link className="nav-item nav-link" to="/signup">Signup</Link></li>
+        <li className="list-inline-item"><Link className="nav-item nav-link" to="/login">Login</Link></li>
+      </ul>
+    );
+
+    return (
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link className="navbar-brand" to="/">Moneyturns</Link>
-      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div className="navbar-nav">
-          <Link className="nav-item nav-link" to="/dashboard">Dashboard</Link>
-          <Link className="nav-item nav-link" to="/signup">Signup</Link>
-          <Link className="nav-item nav-link" to="/login">Login</Link>
-        </div>
+      <div className="">
+        { isAuthenticated ? userLinks : guestLinks }
       </div>
     </nav>
-  );
+    );
+  }
+}
+
+NavigationBar.propTypes = {
+  auth: PropTypes.object.isRequired,
+  logout: PropTypes.func.isRequired,
 };
+
+export default connect(
+  mapStateToProps, { logout }
+)(NavigationBar);
