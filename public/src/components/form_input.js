@@ -15,18 +15,31 @@ const FormInput = (props) => {
   const inputClass = error ? `${formConstants.INPUT_CSS_CLASS} ${formConstants.INPUT_ERROR_CSS_CLASS}` : formConstants.INPUT_CSS_CLASS;
   const textError = error ? formConstants.TEXT_ERROR_CSS_CLASS : '';
   const { checkUserExists } = props;
+  const input = !props.isTextArea ? (
+    <input
+      type={props.type}
+      className={inputClass}
+      id={props.name}
+      name={props.name}
+      onChange={props.onChange}
+      onBlur={checkUserExists}
+      value={props.value}
+    />
+  ) : (
+    <textarea
+      type={props.type}
+      className={inputClass}
+      id={props.name}
+      name={props.name}
+      onChange={props.onChange}
+      value={props.value}
+    />
+  );
+  
   return (
     <div className="form-group">
       <label className="text-capitalize" htmlFor={props.name}>{props.title || props.name}</label>
-      <input
-        type={props.type}
-        className={inputClass}
-        id={props.name}
-        name={props.name}
-        onChange={props.onChange}
-        onBlur={checkUserExists}
-        value={props.value}
-      />
+      { input }
       <span className={textError}>{error}</span>
     </div>
   );

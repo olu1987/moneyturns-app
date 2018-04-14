@@ -51,6 +51,10 @@ nav > .navbar-brand {
    margin-top: 3em;
 }
 
+.form-wrap.saving-group{
+   background-color: #b6d1ff9c;
+}
+
 .form-wrap h1{
     text-align: center;
 }

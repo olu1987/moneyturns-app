@@ -5,6 +5,7 @@ import App from './src/components/app';
 import Welcome from './src/components/welcome';
 import LoginPage from './src/containers/login_page';
 import SignupPage from './src/containers/signup_page';
+import CreateSavingGroupPage from './src/components/create_saving_group_page';
 
 export default (
   <Route path="/" component={App}>
@@ -12,5 +13,6 @@ export default (
     <Route path="/dashboard" component={Dashboard} />
     <Route path="/login" component={LoginPage} />
     <Route path="/signup" component={SignupPage} />
+    <Route path="/create-saving-group" component={CreateSavingGroupPage} />
   </Route>
 );
