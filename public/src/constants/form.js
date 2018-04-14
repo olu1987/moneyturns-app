@@ -1,0 +1,16 @@
+export default {
+  USERNAME_NAME: 'username',
+  USERNAME_TYPE: 'text',
+  PASSWORD_NAME: 'password',
+  PASSWORD_TYPE: 'password',
+  PASSWORD_CONFIRMATION_NAME: 'passwordConfirmation',
+  PASSWORD_CONFIRMATION_TITLE: 'Password Confirmation',
+  EMAIL_NAME: 'email',
+  EMAIL_TYPE: 'email',
+  INPUT_CSS_CLASS: 'form-control',
+  INPUT_ERROR_CSS_CLASS: 'is-invalid',
+  TEXT_ERROR_CSS_CLASS: 'invalid-feedback',
+  INDENTIFIER_NAME: 'identifier',
+  INDENTIFIER_TITLE: 'Username / Email',
+  INDENTIFIER_TYPE: 'text',
+};

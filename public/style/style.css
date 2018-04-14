@@ -1,0 +1,52 @@
+html, body, .container-fluid, .container-fluid > div{
+    height: 100%;
+}
+
+td, th {
+    vertical-align: middle !important;
+    text-align: center !important;
+}
+
+.input-group{
+    margin: 20px 0;
+}
+
+svg {
+    height: 150px;
+}
+
+.group-actions{
+   align-items: center; 
+}
+
+nav.navbar {
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+}
+
+.container-fluid{
+    padding-top: 50px;
+}
+
+.hero{
+  background:url(../images/hero-image.jpg) no-repeat;
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.form-wrap{
+   background-color: #eee;
+   border: 1px solid #bbb;
+   border-radius: 10px;
+   margin-top: 3em;
+}
+
+.form-wrap h1{
+    text-align: center;
+}

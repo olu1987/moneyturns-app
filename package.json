@@ -1,0 +1,41 @@
+{
+  "name": "money-turn",
+  "version": "0.0.1",
+  "description": "group money saving app",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js --exec babel-node",
+    "heroku-postbuild": "npm install",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node index.js"
+  },
+  "author": "Olu Meduoye",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.19.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "nodemon": "^1.17.2"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.2.1",
+    "lodash": "^4.17.5",
+    "mongoose": "^4.7.7",
+    "mongoose-unique-validator": "^2.0.0",
+    "morgan": "^1.9.0",
+    "passport-local": "^1.0.0",
+    "password": "^0.1.1",
+    "validator": "^9.4.1"
+  }
+}
