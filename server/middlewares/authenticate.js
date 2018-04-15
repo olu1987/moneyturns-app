@@ -15,7 +15,7 @@ export default (req, res, next) => {
         res.status(401).json({ error: 'Failed to authenticate' });
       } else {
         
-        User.findOne({ username: { $oid: decoded._id }}).select({ username: 1, email: 1 }).then((user) => {
+        User.findOne({ username: { "$oid" : decoded._id }}).select({ username: 1, email: 1 }).then((user) => {
           if(!user) {
             res.status(404).json({ error: 'User does not exist' });
           }
