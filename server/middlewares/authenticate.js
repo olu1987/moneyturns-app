@@ -14,10 +14,12 @@ export default (req, res, next) => {
       if (err) {
         res.status(401).json({ error: 'Failed to authenticate' });
       } else {
+        console.log(decoded);
         User.findById( decoded._id, (err, user) => {
-          if(!user) {
-            res.status(404).json({ error: 'User does not exist' });
-          }
+          console.log(user);
+          // if(!user) {
+          //   res.status(404).json({ error: 'User does not exist' });
+          // }
 
           req.currentUser = user;
           next();
