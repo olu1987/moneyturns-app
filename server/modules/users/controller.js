@@ -10,7 +10,6 @@ function incryptPassword(password) {
 }
 
 export const createUser = async (req, res) => {
-  console.log(req.body);
   const { errors, isValid } = validateInput(req.body);
   const { email, username } = req.body;
   let { password } = req.body;
