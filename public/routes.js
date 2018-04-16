@@ -9,7 +9,7 @@ import CreateSavingGroupPage from './src/components/create_saving_group_page';
 import requireAuth from './src/utils/require_auth';
 
 export default (
-  <Route path="/" handler={App}>
+  <Route path="/" component={App}>
     <IndexRoute component={Welcome} />
     <Route path="/dashboard" component={requireAuth(Dashboard)} />
     <Route path="/login" component={LoginPage} />
